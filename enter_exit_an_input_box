@@ -1,0 +1,27 @@
+html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box Enter/Exit Example</title>
+</head>
+<body>
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput">
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+
+        // Enter: Focus event
+        nameInput.addEventListener("focus", function() {
+            console.log("You entered the text box!");
+        });
+
+        // Exit: Blur event
+        nameInput.addEventListener("blur", function() {
+            console.log("You exited the text box!");
+        });
+    </script>
+</body>
+</html>
