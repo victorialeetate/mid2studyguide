@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio/Checkbox Change Example</title>
+</head>
+<body>
+    <label><input type="radio" name="color" value="red"> Red</label>
+    <label><input type="radio" name="color" value="blue"> Blue</label>
+
+    <br><br>
+
+    <label><input type="checkbox" id="subscribe"> Subscribe to newsletter</label>
+
+    <script>
+        // Radio buttons change event
+        const radios = document.querySelectorAll('input[name="color"]');
+        radios.forEach(radio => {
+            radio.addEventListener("change", function() {
+                console.log("Selected color:", this.value);
+            });
+        });
+
+        // Checkbox change event
+        const checkbox = document.getElementById("subscribe");
+        checkbox.addEventListener("change", function() {
+            if (this.checked) {
+                console.log("Subscribed to newsletter");
+            } else {
+                console.log("Unsubscribed from newsletter");
+            }
+        });
+    </script>
+</body>
+</html>
