@@ -1,0 +1,21 @@
+html:
+<form id="myForm">
+  <label for="username">Name:</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="color">Favorite Color:</label>
+  <input type="text" id="color" name="color">
+
+  <button type="submit">Submit</button>
+</form>
+
+js:
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent page reload
+    const formData = new FormData(this);
+    const name = formData.get("username");
+    const color = formData.get("color");
+
+    console.log("Name:", name);
+    console.log("Favorite Color:", color);
+});
