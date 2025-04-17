@@ -1,0 +1,125 @@
+// JavaScript Classes
+class Student {
+    constructor(name, grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
+    isPassing() {
+        return this.grade >= 70;
+    }
+}
+
+const victoria = new Student("Victoria", 85);
+console.log(victoria.isPassing()); // true
+
+
+// Array Operations
+const nums = [1, 2, 3, 4, 5];
+
+// Map: double values
+const doubled = nums.map(num => num * 2);  // [2, 4, 6, 8, 10]
+
+// Filter: only even
+const evens = nums.filter(num => num % 2 === 0); // [2, 4]
+
+// Reduce: sum
+const total = nums.reduce((sum, num) => sum + num, 0); // 15
+
+
+
+// Array of Objects & Objects with Arrays
+const students = [
+    { name: "Victoria", grades: [90, 85, 88] },
+    { name: "Jordan", grades: [70, 60, 75] }
+];
+
+// Average each student's grades
+students.forEach(student => {
+    const avg = student.grades.reduce((a, b) => a + b, 0) / student.grades.length;
+    console.log(`${student.name}'s average is ${avg}`);
+});
+
+
+// DOM Manipulation - Read, create, update, delete elements
+// Read
+const header = document.querySelector("h1");
+
+// Create
+const p = document.createElement("p");
+p.textContent = "This is new!";
+document.body.appendChild(p);
+
+// Update
+header.textContent = "Updated Title";
+
+// Delete
+p.remove();
+
+
+// Apply Styles
+header.style.color = "purple";
+p.style.fontWeight = "bold";
+
+
+// Table Output + Loop
+const data = ["apple", "banana", "cherry"];
+const table = document.createElement("table");
+
+data.forEach(item => {
+    const row = table.insertRow();
+    const cell = row.insertCell();
+    cell.textContent = item;
+    cell.style.backgroundColor = "lightyellow";
+});
+
+document.body.appendChild(table);
+
+
+//Events + Form Handling
+html:
+<form id="fruitForm">
+    <input type="text" name="fruit" />
+    <button type="submit">Submit</button>
+</form>
+
+js:
+document.querySelector("#fruitForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    console.log("Fruit:", formData.get("fruit"));
+});
+
+react to input:
+document.querySelector("input").addEventListener("focus", () => {
+    console.log("Entered input box");
+});
+
+
+//Validation + Form Data
+const form = document.querySelector("form");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const age = formData.get("age");
+
+    if (!age || isNaN(age)) {
+        alert("Please enter a valid number");
+    } else {
+        console.log("Valid age:", age);
+    }
+});
+
+// Functions
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+// Random Number Generator
+function randomBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+
