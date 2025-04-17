@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down List Selection Example</title>
+</head>
+<body>
+    <label for="dropdown">Choose a color:</label>
+    <select id="dropdown">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+
+    <script>
+        const dropdown = document.getElementById("dropdown");
+
+        // Event listener for when the selection changes
+        dropdown.addEventListener("change", function() {
+            console.log("Selected color:", dropdown.value);
+        });
+    </script>
+</body>
+</html>
